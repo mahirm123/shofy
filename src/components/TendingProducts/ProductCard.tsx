@@ -5,31 +5,30 @@ import { FiShoppingCart } from "react-icons/fi";
 import { LuEye } from "react-icons/lu";
 import { ProductType } from "../../../type";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
+import { IoIosStarOutline } from "react-icons/io";
+import { FaStar } from "react-icons/fa";
 
 interface Props {
-    products: ProductType;
-  }
+  products: ProductType;
+}
 
-const ProductCard = ({products}: Props) => {
+const ProductCard = ({ products }: Props) => {
+  const SideBar = () => {
+    return (
+      <div className="absolute right-2 bottom-12 border flex flex-col text-2xl border-borderColor bg-white rounded-md overflow-hidden transform translate-x-20 group-hover:translate-x-0 duration-300">
+        <button className="p-2 hover:bg-skyColor duration-300 hover:text-white">
+          <FiShoppingCart />
+        </button>
+        <button className="p-2 hover:bg-skyColor duration-300 hover:text-white border-y border-y-borderColor">
+          <LuEye />
+        </button>
+        <button className="p-2 hover:bg-skyColor duration-300 hover:text-white">
+          <MdFavoriteBorder />
+        </button>
+      </div>
+    );
+  };
 
-    
-      
-      const SideBar = () => {
-        return (
-          <div className="absolute right-2 bottom-12 border flex flex-col text-2xl border-borderColor bg-white rounded-md overflow-hidden transform translate-x-20 group-hover:translate-x-0 duration-300">
-            <button className="p-2 hover:bg-skyColor duration-300 hover:text-white">
-              <FiShoppingCart />
-            </button>
-            <button className="p-2 hover:bg-skyColor duration-300 hover:text-white border-y border-y-borderColor">
-              <LuEye />
-            </button>
-            <button className="p-2 hover:bg-skyColor duration-300 hover:text-white">
-              <MdFavoriteBorder />
-            </button>
-          </div>
-        );
-      };
-      
   return (
     <div className="border border-borderColor hover:shadow-lg hover:shadow-black/30 duration-300 rounded-md group overflow-hidden">
       <div className=" relative">
@@ -51,14 +50,24 @@ const ProductCard = ({products}: Props) => {
           {products?.category}
         </p>
 
-        <h2 className="font-semibold text-base line-clamp-2">
+        <h2 className="font-semibold text-base line-clamp-1">
           {products?.title}
         </h2>
+        <p className="flex items-center text-yellow-500">
+          <FaStar  />
+          <FaStar  />
+          <FaStar  />
+          <FaStar />
+          <IoIosStarOutline />
+          <span className="text-gray-600 text-sm ml-2">
+            (9 reviews)
+          </span>
+        </p>
         <p className="font-semibold text-skyColor">${products?.price}</p>
         <AddToCartButton />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;

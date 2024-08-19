@@ -60,7 +60,7 @@ const Category = () => {
           </div>
         </div>
       </div>
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-auto ">
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-screen-2xl mx-auto">
         <div className="flex items-center justify-center gap-3 bg-[#dce8ff]/60 w-[280px] h-[100px]">
           <CiDeliveryTruck size={40} className="text-red-500 hover:scale-110 transition-all duration-200" />
           <div>

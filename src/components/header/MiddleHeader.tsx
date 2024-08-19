@@ -34,8 +34,8 @@ const MiddleHeader = () => {
               className="text-xl absolute top-2.5 right-12 text-gray-500 hover:text-red-500 cursor-pointer duration-200"
             />
           )}
-          <span className="w-[50px] h-[48px] bg-themePrimary inline-flex items-center justify-center text-white absolute top-0 right-0  duration-200 cursor-pointer">
-            <RiSearchLine size={25}/>
+          <span className="w-[50px] h-[48px] bg-themeColor inline-flex items-center justify-center text-white absolute top-0 right-0  duration-200 cursor-pointer">
+            <RiSearchLine size={25} />
           </span>
         </div>
         <div className="hidden md:inline-flex items-center gap-3">
@@ -45,21 +45,35 @@ const MiddleHeader = () => {
               <LiaUser />
             </div>
             <div>
-              <p className="text-xs">Hello, Guests</p>
-              <p className="text-sm">Login / Register</p>
+              <p className="text-xs">Hello, Guest</p>
+              <p className="text-sm">
+                <Link
+                  href={"/login"}
+                  className="font-semibold hover:text-blue-700"
+                >
+                  Login
+                </Link>{" "}
+                /{" "}
+                <Link
+                  href={"/register"}
+                  className="font-semibold hover:text-blue-700"
+                >
+                  Register
+                </Link>
+              </p>
             </div>
           </div>
           {/* Favorite Icon */}
           <Link href={"/favorite"} className="text-2xl relative">
             <MdFavoriteBorder />
-            <span className="absolute -top-1 -right-1 text-[10px] font-medium w-4 h-4 bg-themePrimary text-white rounded-full flex items-center justify-center">
+            <span className="absolute -top-1 -right-1 text-[10px] font-medium w-4 h-4 bg-themePrimary text-white bg-blue-500 rounded-full flex items-center justify-center">
               0
             </span>
           </Link>
           {/* Cart Icon */}
           <Link href="/cart" className="text-2xl relative">
             <BiShoppingBag />
-            <span className="absolute -top-1 -right-1 text-[10px] font-medium w-4 h-4 bg-themePrimary text-white rounded-full flex items-center justify-center">
+            <span className="absolute -top-1 -right-1 text-[10px] font-medium w-4 h-4 bg-themePrimary text-white bg-blue-500 rounded-full flex items-center justify-center">
               0
             </span>
           </Link>
